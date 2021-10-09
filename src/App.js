@@ -1,10 +1,9 @@
+import Nav from "./components/Nav";
+
 export default function App() {
   return (
     <div className="App">
-      <ul>
-        <li>pizza</li>
-        <li>tacos</li>
-      </ul>
+      <Nav />
     </div>
   );
 }
