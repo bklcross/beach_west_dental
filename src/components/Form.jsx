@@ -7,7 +7,7 @@ export default function Form () {
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
     const [date, setDate] = useState("");
-    //const [time, setTime] = useState("");
+    const [time, setTime] = useState("");
 
     const months = {
         'Jan' : '01',
@@ -56,14 +56,22 @@ export default function Form () {
     const dateLimit = calcDateLimit();
 
     const sendEmail = () => {
+        let day = "";
+        const month = date.slice(5,7);
+        const year = date.slice(0,4);
+
+        if (date.charAt(8) === '0') {
+            day = date.slice(9,10);
+        } else {
+            day = date.slice(8,10);
+        }
+
         Email.send({
-        Host: "smtp.mailtrap.io",
-        Username : "1392670e3c9778",
-        Password : "0782c03f075f82",
+        SecureToken : "54becfd7-dd2e-4664-a601-b74f6c0d1a26",
         To : 'testmail@gmail.com',
         From : email,
         Subject : "Appointment Form Submission",
-        Body : firstName + " " + lastName + " would like to make an appointment for " + date + ". Contact at: " + number,
+        Body : firstName + " " + lastName + " would like to make an appointment for " + month + "/" + day + "/" + year + " at " + time + ". Contact at: " + number,
         }).then(
             message => alert("mail sent successfully")
         );
@@ -87,6 +95,10 @@ export default function Form () {
 
     const handleDate = (newDate) => {
         setDate(newDate);
+    }
+
+    const handleTime = (newTime) => {
+        setTime(newTime);
     }
 
     return (
@@ -121,6 +133,8 @@ export default function Form () {
                     Phone Number
                 </label>
                 <input onChange={e => handleNumber(e.target.value)}
+                    type="tel"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required
                     id="number"
                     name="number"
                 /> <br />
@@ -133,8 +147,48 @@ export default function Form () {
                 min={currentDate} max={dateLimit}
                 /> <br />
 
+                <label htmlFor="time">
+                    Time
+                </label>
+                <select onChange={e => handleTime(e.target.value)}
+                    id="time"
+                    name="time"
+                > 
+                    <option value="9:00 AM">9:00 AM</option>
+                    <option value="9:30 AM">9:30 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="10:30 AM">10:30 AM</option> 
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="11:30 AM">11:30 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="12:30 PM">12:30 PM</option> 
+                    <option value="1:00 PM">1:00 PM</option>
+                    <option value="1:30 PM">1:30 PM</option>
+                    <option value="2:00 PM">2:00 PM</option>
+                    <option value="2:30 PM">2:30 PM</option> 
+                    <option value="3:00 PM">3:00 PM</option>
+                    <option value="3:30 PM">3:30 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                    <option value="4:30 PM">4:30 PM</option> 
+                    <option value="5:00 PM">5:00 PM</option>
+                    <option value="5:30 PM">5:30 PM</option>
+                    
+                </select> <br />
+
                 <input type="button" value="Send Email" onClick={(e) => sendEmail()}/>
             </form>
         </div>
     )
 }
+
+/*
+<label htmlFor="time">
+                    Time
+                </label>
+                <input onChange={e => handleTime(e.target.value)}
+                    type="time"
+                    min="09:00" max="18:30" required
+                    id="time"
+                    name="time"
+                /> <br />
+*/
