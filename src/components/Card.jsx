@@ -1,3 +1,4 @@
+/*
 export default function Card() {
     return (
         <div className="card">
@@ -10,4 +11,8 @@ export default function Card() {
       </div>
     )  
 }
-  
+ */
+
+export default function Card() {
+  return (<></>)
+}
