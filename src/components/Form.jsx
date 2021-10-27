@@ -24,6 +24,7 @@ export default function Form () {
         'Dec' : '12'
     }
 
+    // returns current date in a YYYY-MM-DD format
     const calcCurrentDate = () => {
         const currentDateTemp = new Date().toDateString();
 
@@ -32,6 +33,7 @@ export default function Form () {
                 + currentDateTemp.slice(8, 10);
     }
 
+    // returns 2 months ahead of current date in a YYYY-MM-DD format
     const calcDateLimit = () => {
         const currentDateTemp = new Date().toDateString();
         const currMonth = parseInt(currentDate.slice(5,7));
@@ -58,7 +60,7 @@ export default function Form () {
         Host: "smtp.mailtrap.io",
         Username : "1392670e3c9778",
         Password : "0782c03f075f82",
-        To : 'dimitri.matevossian@gmail.com',
+        To : 'testmail@gmail.com',
         From : email,
         Subject : "Appointment Form Submission",
         Body : firstName + " " + lastName + " would like to make an appointment for " + date + ". Contact at: " + number,
@@ -87,7 +89,6 @@ export default function Form () {
         setDate(newDate);
     }
 
-    // states/hooks
     return (
         <div>
             <form method="post">
