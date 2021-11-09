@@ -180,15 +180,3 @@ export default function Form () {
         </div>
     )
 }
-
-/*
-<label htmlFor="time">
-                    Time
-                </label>
-                <input onChange={e => handleTime(e.target.value)}
-                    type="time"
-                    min="09:00" max="18:30" required
-                    id="time"
-                    name="time"
-                /> <br />
-*/
