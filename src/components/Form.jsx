@@ -1,5 +1,6 @@
 import {Email} from '../utils/smtp';
 import React, {useState} from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Form () {
     const [firstName, setFirstName] = useState("");
@@ -8,6 +9,7 @@ export default function Form () {
     const [number, setNumber] = useState("");
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
+    const [verified, setVerified] = useState(false);
 
     const months = {
         'Jan' : '01',
@@ -101,6 +103,10 @@ export default function Form () {
         setTime(newTime);
     }
 
+    const handleVerify = (value) => {
+        setVerified(!verified);
+    }
+
     return (
         <div>
             <form method="post">
@@ -175,7 +181,12 @@ export default function Form () {
                     
                 </select> <br />
 
-                <input type="button" value="Send Email" onClick={(e) => sendEmail()}/>
+                <ReCAPTCHA
+                    sitekey="6LdliSEdAAAAAExVnc6d0DHSquzH86OMrOwkoQpx"
+                    onChange={handleVerify}
+                />,
+
+                <input type="button" disabled={!verified} value="Send Email" onClick={(e) => sendEmail()}/>
             </form>
         </div>
     )
