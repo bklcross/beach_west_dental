@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'futura';
+    src: url('./futura/FuturaCyrillicMedium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futura-bold';
+    src: url('./futura/FuturaCyrillicBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
