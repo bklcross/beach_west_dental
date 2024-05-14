@@ -1,10 +1,11 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 
 export const OpeningHours = () => {
   return (
     <Box
       sx={{
-        maxWidth: "350px",
+        maxWidth: "280px",
         width: "100%",
         boxShadow: "none",
         backgroundColor: "#2E529C",
@@ -15,7 +16,14 @@ export const OpeningHours = () => {
       <Typography
         variant="h5"
         component="div"
-        sx={{ display: "flex", justifyContent: "center" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          fontFamily: "montserrat",
+          fontWeight: "600",
+          fontSize: "28px",
+          letterSpacing: "2px",
+        }}
       >
         OPENING HOURS
       </Typography>
@@ -28,25 +36,37 @@ export const OpeningHours = () => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "16px 0",
+            margin: "24px 0",
+            fontFamily: "oswald",
+            fontWeight: "500",
+            fontSize: "16px",
+            letterSpacing: "1px",
           }}
         >
-          <Box>Monday</Box> <Box>9AM-6PM</Box>
+          <Box>MONDAY</Box> <Box>9AM-6PM</Box>
         </Box>
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "16px 0",
+            margin: "24px 0",
+            fontFamily: "oswald",
+            fontWeight: "500",
+            fontSize: "16px",
+            letterSpacing: "1px",
           }}
         >
-          <Box>Tuesday</Box> <Box>9AM-6PM</Box>
+          <Box>TUESDAY</Box> <Box>9AM-6PM</Box>
         </Box>
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "16px 0",
+            margin: "24px 0",
+            fontFamily: "oswald",
+            fontWeight: "500",
+            fontSize: "16px",
+            letterSpacing: "1px",
           }}
         >
           <Box>Wednesday</Box> <Box>9AM-6PM</Box>
@@ -55,39 +75,74 @@ export const OpeningHours = () => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "16px 0",
+            margin: "24px 0",
+            fontFamily: "oswald",
+            fontWeight: "500",
+            fontSize: "16px",
+            letterSpacing: "1px",
           }}
         >
-          <Box>Thursday</Box> <Box>9AM-6PM</Box>
+          <Box>THURSDAY</Box> <Box>9AM-6PM</Box>
         </Box>
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "16px 0",
+            margin: "24px 0",
+            fontFamily: "oswald",
+            fontWeight: "500",
+            fontSize: "16px",
+            letterSpacing: "1px",
+            color: "#F0441D",
           }}
         >
-          <Box>Friday</Box> <Box>CLOSED</Box>
+          <Box>FRIDAY</Box> <Box>CLOSED</Box>
         </Box>
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "16px 0",
+            margin: "24px 0",
+            fontFamily: "oswald",
+            fontWeight: "500",
+            fontSize: "16px",
+            letterSpacing: "1px",
           }}
         >
-          <Box>Saturday</Box> <Box>BY APPOINTMENT</Box>
+          <Box>SATURDAY</Box> <Box>BY APPOINTMENT</Box>
         </Box>
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "16px 0",
+            margin: "24px 0",
+            fontFamily: "oswald",
+            fontWeight: "500",
+            fontSize: "16px",
+            letterSpacing: "1px",
+            color: "#F0441D",
           }}
         >
-          <Box>Sunday</Box> <Box>CLOSED</Box>
+          <Box>SUNDAY</Box> <Box>CLOSED</Box>
         </Box>
       </Typography>
+      <Button
+        variant="contained"
+        color="inherit"
+        size="large"
+        href="tel:(714) 894-0574"
+        startIcon={<EventAvailableIcon />}
+        sx={{
+          color: "#1f5796",
+          backgroundColor: "#ffffff",
+          borderRadius: "16px",
+          fontFamily: "Montserrat",
+          fontWeight: "700",
+          marginTop: "8px",
+        }}
+      >
+        {"Make an Appointment".toLowerCase()}
+      </Button>
     </Box>
   );
 };

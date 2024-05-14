@@ -22,12 +22,12 @@ export const HeroSection = () => {
         textAlign: "center",
       }}
     >
-      <Container maxWidth="md">
+      <Container maxWidth="md" sx={{ marginTop: "48px" }}>
         <Button
           variant="contained"
           color="inherit"
           size="large"
-          href="tel:(714) 894-0574"
+          href="https://www.yelp.com/biz/beach-and-west-dental-westminster-3"
           sx={{
             color: "#1f5796",
             backgroundColor: "#ffffff",
@@ -43,7 +43,7 @@ export const HeroSection = () => {
           variant="contained"
           color="inherit"
           size="large"
-          href="tel:(714) 894-0574"
+          href="https://www.google.com/search?q=BEACH+%26+WEST+DENTAL&rlz=1C1CHBF_enUS981US981&oq=beach&aqs=chrome.0.69i59j69i57j46i199i465i512j69i60l2j69i61j69i60l2.2997j0j7&sourceid=chrome&ie=UTF-8#lrd=0x80dd271a3cacd6f3:0xa726a06d43873db1,1,,,"
           sx={{
             color: "#1f5796",
             backgroundColor: "#ffffff",
@@ -58,7 +58,12 @@ export const HeroSection = () => {
         <Typography
           variant="h2"
           component="h1"
-          sx={{ margin: "32px", fontFamily: "futura" }}
+          sx={{
+            margin: "32px",
+            fontFamily: "poppins",
+            fontWeight: "700",
+            letterSpacing: "2px",
+          }}
         >
           {"A Better Life Starts With A Beautiful Smile".toUpperCase()}
         </Typography>
@@ -73,6 +78,8 @@ export const HeroSection = () => {
             backgroundColor: "#ffffff",
             borderRadius: "16px",
             margin: "0 16px",
+            fontFamily: "Montserrat",
+            fontWeight: "700",
           }}
         >
           (714) 894-0574
@@ -88,9 +95,11 @@ export const HeroSection = () => {
             backgroundColor: "#ffffff",
             borderRadius: "16px",
             margin: "0 16px",
+            fontFamily: "Montserrat",
+            fontWeight: "700",
           }}
         >
-          {"Make and Appointment".toLowerCase()}
+          {"Make an Appointment".toLowerCase()}
         </Button>
       </Container>
     </Box>

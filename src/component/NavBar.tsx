@@ -2,7 +2,6 @@ import * as React from "react";
 import {
   AppBar,
   Box,
-  CssBaseline,
   Divider,
   Drawer,
   IconButton,
@@ -70,7 +69,8 @@ export const NavBar = ({ window }: NavBarProps) => {
                   sx={{
                     color: "#787878",
                     fontSize: "16px",
-                    fontFamily: "futura",
+                    fontFamily: "oswald",
+                    fontWeight: "400",
                   }}
                 >
                   {item.label.toUpperCase()}
