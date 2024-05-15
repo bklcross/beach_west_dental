@@ -71,9 +71,10 @@ export const NavBar = ({ window }: NavBarProps) => {
                     fontSize: "16px",
                     fontFamily: "oswald",
                     fontWeight: "400",
+                    textTransform: "uppercase",
                   }}
                 >
-                  {item.label.toUpperCase()}
+                  {item.label}
                 </Button>
               ))}
             </Box>

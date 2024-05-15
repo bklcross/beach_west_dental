@@ -24,9 +24,10 @@ export const Dentist = () => {
           margin: "40px 0",
           textAlign: "center",
           letterSpacing: "2px",
+          textTransform: "uppercase",
         }}
       >
-        {"Meet The Dentist".toUpperCase()}
+        Meet The Dentist
       </Typography>
       <Box sx={{ display: "flex", fontFamily: "oswald" }}>
         <Box mr={"40px"}>

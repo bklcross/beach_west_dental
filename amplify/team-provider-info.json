@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-beachwestdental-dev-a6161-authRole",
+      "UnauthRoleArn": "arn:aws:iam::129405039505:role/amplify-beachwestdental-dev-a6161-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::129405039505:role/amplify-beachwestdental-dev-a6161-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-beachwestdental-dev-a6161-deployment",
+      "UnauthRoleName": "amplify-beachwestdental-dev-a6161-unauthRole",
+      "StackName": "amplify-beachwestdental-dev-a6161",
+      "StackId": "arn:aws:cloudformation:us-west-1:129405039505:stack/amplify-beachwestdental-dev-a6161/8d499980-11ad-11ef-8364-024d489e1ed3",
+      "AmplifyAppId": "d28l2mrgjucolx"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d28l2mrgjucolx",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}

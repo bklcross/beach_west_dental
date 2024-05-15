@@ -63,9 +63,10 @@ export const HeroSection = () => {
             fontFamily: "poppins",
             fontWeight: "700",
             letterSpacing: "2px",
+            textTransform: "uppercase",
           }}
         >
-          {"A Better Life Starts With A Beautiful Smile".toUpperCase()}
+          A Better Life Starts With A Beautiful Smile
         </Typography>
         <Button
           variant="contained"

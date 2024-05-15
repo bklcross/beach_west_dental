@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import examCleaningServiceIcon from "../assets/svg/exam-cleaning.svg";
 import teethWhitening from "../assets/svg/teeth-whitening.svg";
 import toothColoredFilling from "../assets/svg/tooth-colored-filling.svg";
@@ -67,9 +67,10 @@ export const ServicesSection = () => {
           margin: "40px 0",
           textAlign: "center",
           letterSpacing: "2px",
+          textTransform: "uppercase",
         }}
       >
-        {"Services".toUpperCase()}
+        Services
       </Typography>
       <Box
         display="flex"

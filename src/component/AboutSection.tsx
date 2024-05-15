@@ -127,8 +127,10 @@ export const AboutSection = () => {
               sx={{ width: 50, mr: "16px" }}
             />
             <Box>
-              <Box sx={{ fontWeight: 700 }}>Accept all New Patients</Box>
-              <Box sx={{ color: "#707274" }}>
+              <Box sx={{ fontWeight: 700, fontFamily: "Oswald" }}>
+                Accept all New Patients
+              </Box>
+              <Box sx={{ color: "#707274", fontFamily: "Oswald" }}>
                 We welcome new patients at all times
               </Box>
             </Box>
@@ -143,8 +145,11 @@ export const AboutSection = () => {
               sx={{ width: 50, mr: "16px" }}
             />
             <Box>
-              <Box sx={{ fontWeight: 700 }}> Accept all PPO Insurance</Box>
-              <Box sx={{ color: "#707274" }}>
+              <Box sx={{ fontWeight: 700, fontFamily: "Oswald" }}>
+                {" "}
+                Accept all PPO Insurance
+              </Box>
+              <Box sx={{ color: "#707274", fontFamily: "Oswald" }}>
                 All types of PPO insurance are accepted
               </Box>
             </Box>
