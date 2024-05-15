@@ -54,7 +54,7 @@ const services: ServiceItem[] = [
 
 export const ServicesSection = () => {
   return (
-    <Box>
+    <Box sx={{ margin: "40px 0" }}>
       <Typography
         gutterBottom
         variant="h1"
@@ -64,7 +64,6 @@ export const ServicesSection = () => {
           color: "#2E529C",
           fontWeight: 700,
           fontSize: "48px",
-          margin: "40px 0",
           textAlign: "center",
           letterSpacing: "2px",
           textTransform: "uppercase",
@@ -76,12 +75,12 @@ export const ServicesSection = () => {
         display="flex"
         flexWrap="wrap"
         justifyContent="center"
-        sx={{ backgroundShadow: "none" }}
+        sx={{ backgroundShadow: "none", padding: "0 64px" }}
       >
         {services.map((service: ServiceItem) => (
           <Box
             key={service.title}
-            sx={{ width: "300px", height: "100%", margin: "24px" }}
+            sx={{ width: "250px", height: "100%", margin: "24px" }}
           >
             <Card
               sx={{
@@ -93,7 +92,7 @@ export const ServicesSection = () => {
                 color: "#ffffff",
                 flexDirection: "column",
                 padding: "32px 16px",
-                height: "320px",
+                height: "256px",
                 textAlign: "center",
               }}
             >
@@ -105,7 +104,7 @@ export const ServicesSection = () => {
                   sx={{
                     fontFamily: "poppins",
                     fontWeight: 500,
-                    fontSize: "24px",
+                    fontSize: "16px",
                     textAlign: "center",
                     lineHeight: "unset",
                     letterSpacing: "1px",
@@ -119,7 +118,7 @@ export const ServicesSection = () => {
                   sx={{
                     fontFamily: "oswald",
                     fontWeight: 200,
-                    fontSize: "16px",
+                    fontSize: "12px",
                   }}
                 >
                   {service.description}

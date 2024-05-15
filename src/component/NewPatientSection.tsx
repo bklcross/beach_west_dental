@@ -8,7 +8,16 @@ import patientRegistrationPDF from "../assets/pdf/Patient_Registration_Form.pdf"
 
 export const NewPatientSection = () => {
   return (
-    <Box sx={{ bgcolor: "#e3f2fd", padding: "40px 160px" }}>
+    <Box
+      sx={{
+        bgcolor: "#e3f2fd",
+        padding: "40px 0",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Typography
         variant="h4"
         sx={{
@@ -31,7 +40,13 @@ export const NewPatientSection = () => {
       >
         PLEASE FILL OUT THE FORM(S), FOR NEW PATIENTS
       </Typography>
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: "1000px",
+        }}
+      >
         <Button
           variant="text"
           href={consentPDF}
