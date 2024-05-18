@@ -15,6 +15,7 @@ export const Footer = () => {
         color: "white",
         padding: "48px",
       }}
+                  id="footer"
     >
       <Box>
         <img src={logo} alt="bw-logo" style={{ width: 400 }} />

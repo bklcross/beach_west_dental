@@ -89,8 +89,8 @@ export const HeroSection = () => {
           variant="contained"
           color="inherit"
           size="large"
-          href="tel:(714) 894-0574"
           startIcon={<EventAvailableIcon />}
+          href={"#appointment-form"}
           sx={{
             color: "#1f5796",
             backgroundColor: "#ffffff",
@@ -100,7 +100,7 @@ export const HeroSection = () => {
             fontWeight: "700",
           }}
         >
-          {"Make an Appointment".toLowerCase()}
+          Make an Appointment
         </Button>
       </Container>
     </Box>

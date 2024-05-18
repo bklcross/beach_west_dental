@@ -17,6 +17,7 @@ export const NewPatientSection = () => {
         justifyContent: "center",
         alignItems: "center",
       }}
+      id="new-patient-section"
     >
       <Typography
         variant="h4"

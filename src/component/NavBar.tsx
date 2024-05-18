@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import logo from "../assets/svg/logo-blue.svg";
+import { NavItem } from "../shared/interfaces";
 
 interface NavBarProps {
   window?: () => Window;
@@ -22,10 +23,10 @@ interface NavBarProps {
 
 const drawerWidth = 240;
 const navItems: NavItem[] = [
-  { label: "Dentist", href: "nav-dentist" },
-  { label: "Services", href: "nav-services" },
-  { label: "New Patient", href: "nav-new-patient" },
-  { label: "Contact", href: "nav-contact" },
+  { label: "Dentist", href: "#dentist-section" },
+  { label: "Services", href: "#services-section" },
+  { label: "New Patient", href: "#new-patient-section" },
+  { label: "Contact", href: "#footer" },
 ];
 
 export const NavBar = ({ window }: NavBarProps) => {
@@ -66,6 +67,7 @@ export const NavBar = ({ window }: NavBarProps) => {
               {navItems.map((item: NavItem) => (
                 <Button
                   key={item.href}
+                  href={item.href}
                   sx={{
                     color: "#787878",
                     fontSize: "16px",
@@ -106,7 +108,7 @@ export const NavBar = ({ window }: NavBarProps) => {
             <List>
               {navItems.map((item: NavItem) => (
                 <ListItem key={item.href} disablePadding>
-                  <ListItemButton sx={{ textAlign: "center" }}>
+                  <ListItemButton href={item.href} sx={{ textAlign: "center" }}>
                     <ListItemText primary={item.label} />
                   </ListItemButton>
                 </ListItem>

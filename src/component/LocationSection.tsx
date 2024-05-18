@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 
 const MapComponent = () => {
   return (
-    <Box sx={{ width: "100%", bgcolor: "#ECF7FC", padding: "16px" }}>
+    <Box sx={{ bgcolor: "#ECF7FC", padding: "32px 0" }}>
       <Typography
         variant="h4"
         sx={{
@@ -11,7 +11,7 @@ const MapComponent = () => {
           color: "#2E529C",
           fontWeight: 700,
           fontSize: "48px",
-          padding: "24px 0 32px",
+          padding: "16px 0 32px",
           letterSpacing: "2px",
         }}
       >

@@ -1,10 +1,18 @@
-interface NavItem {
+export interface NavItem {
   label: string;
   href: string;
 }
 
-interface ServiceItem {
+export interface ServiceItem {
   title: string;
   image: string;
   description: string;
+}
+
+export interface Appointment {
+  email: string;
+  name: string;
+  tel: string;
+  message: string;
+  date: string;
 }

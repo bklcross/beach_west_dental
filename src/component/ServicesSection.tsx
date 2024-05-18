@@ -6,6 +6,7 @@ import implantRestoration from "../assets/svg/implant-restoration.svg";
 import crownBridge from "../assets/svg/crown-bridge.svg";
 import dentures from "../assets/svg/dentures.svg";
 import invisalign from "../assets/svg/invisalign.svg";
+import { ServiceItem } from "../shared/interfaces";
 
 const services: ServiceItem[] = [
   {
@@ -54,7 +55,7 @@ const services: ServiceItem[] = [
 
 export const ServicesSection = () => {
   return (
-    <Box sx={{ margin: "40px 0" }}>
+    <Box sx={{ margin: "40px 0" }} id="services-section">
       <Typography
         gutterBottom
         variant="h1"

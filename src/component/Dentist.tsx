@@ -11,6 +11,7 @@ export const Dentist = () => {
         boxShadow: "none",
         padding: "0 48px 40px 40px",
       }}
+      id="dentist-section"
     >
       <Typography
         gutterBottom
