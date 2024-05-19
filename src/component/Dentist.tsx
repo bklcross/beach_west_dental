@@ -1,4 +1,3 @@
-import {} from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
 import dentist from "../assets/png/dr-kei.png";
 
