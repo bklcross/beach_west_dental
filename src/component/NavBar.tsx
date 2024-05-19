@@ -25,7 +25,7 @@ const drawerWidth = 240;
 const navItems: NavItem[] = [
   { label: "Dentist", href: "#dentist-section" },
   { label: "Services", href: "#services-section" },
-  { label: "New Patient", href: "#new-patient-section" },
+  { label: "NewPatient", href: "#new-patient-section" },
   { label: "Contact", href: "#footer" },
 ];
 
@@ -54,16 +54,24 @@ export const NavBar = ({ window }: NavBarProps) => {
           <Box
             sx={{
               display: "flex",
-              justifyContent: "space-between",
               width: "100%",
               alignItems: "center",
               padding: "24px 48px",
+              justifyContent: { xs: "center", sm: "space-between" },
             }}
           >
-            <Box>
-              <img src={logo} alt="bw-logo" style={{ width: 400 }} />
+            <Box
+              sx={{
+                width: { xs: "250px", sm: "300px", lg: "400px" },
+              }}
+            >
+              <img src={logo} alt="bw-logo" style={{ width: "100%" }} />
             </Box>
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <Box
+              sx={{
+                display: { xs: "none", sm: "flex" },
+              }}
+            >
               {navItems.map((item: NavItem) => (
                 <Button
                   key={item.href}
@@ -101,19 +109,27 @@ export const NavBar = ({ window }: NavBarProps) => {
           }}
         >
           <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-            <Typography variant="h6" sx={{ my: 2 }}>
-              MUI
-            </Typography>
+            <Box sx={{ margin: "16px" }}>
+              <img src={logo} alt="bw-logo" style={{ width: 200 }} />
+            </Box>
             <Divider />
-            <List>
+            <Box sx={{ display: "flex", flexDirection: "column" }}>
               {navItems.map((item: NavItem) => (
-                <ListItem key={item.href} disablePadding>
-                  <ListItemButton href={item.href} sx={{ textAlign: "center" }}>
-                    <ListItemText primary={item.label} />
-                  </ListItemButton>
-                </ListItem>
+                <Button
+                  key={item.href}
+                  href={item.href}
+                  sx={{
+                    color: "#787878",
+                    fontSize: "16px",
+                    fontFamily: "oswald",
+                    fontWeight: "400",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {item.label}
+                </Button>
               ))}
-            </List>
+            </Box>
           </Box>
         </Drawer>
       </nav>

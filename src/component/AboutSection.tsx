@@ -8,14 +8,15 @@ export const AboutSection = () => {
     <Box
       sx={{
         display: "flex",
-        flexDirection: { xs: "column", sm: "row" },
+        flexDirection: { xs: "column", md: "row" },
         backgroundColor: "#ECF7FC",
-        padding: "32px",
+        padding: { xs: "32px", md: "40px" },
+        alignItems: { xs: "center" },
       }}
     >
       <Box
         sx={{
-          width: "60%",
+          width: { xs: "100%", md: "60%" },
           display: "flex",
           justifyContent: "center",
         }}
@@ -36,7 +37,7 @@ export const AboutSection = () => {
       </Box>
       <Box
         sx={{
-          width: "40%",
+          width: { xs: "100%", md: "40%" },
           display: "flex",
           flexDirection: "column",
           margin: "48px 0 0 0",
@@ -44,10 +45,11 @@ export const AboutSection = () => {
       >
         <Box
           sx={{
-            position: "absolute",
+            position: { xs: "relative", md: "absolute" },
             right: 0,
             display: "flex",
             alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <Typography
@@ -59,8 +61,8 @@ export const AboutSection = () => {
               fontWeight: 700,
               fontSize: "40px",
               margin: "8px 0",
-              textAlign: "center",
               letterSpacing: "2px",
+              textAlign: { xs: "center", md: "start" },
             }}
           >
             WHY CHOOSE
@@ -71,6 +73,7 @@ export const AboutSection = () => {
               width: "300px",
               height: "25px",
               margin: "0 0 0 32px",
+              display: { xs: "none", md: "flex" },
             }}
           ></Box>
         </Box>
@@ -83,7 +86,8 @@ export const AboutSection = () => {
             fontWeight: 700,
             fontSize: "40px",
             letterSpacing: "2px",
-            margin: "48px 0 16px 0",
+            margin: { xs: "0 0 16px 0", md: "48px 0 16px 0" },
+            textAlign: { xs: "center", md: "start" },
           }}
         >
           BEACH & WEST?

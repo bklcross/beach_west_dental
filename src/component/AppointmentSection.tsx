@@ -24,18 +24,16 @@ export const AppointmentSection: React.FC = () => {
     tel: "",
   });
 
-  // Validation functions
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
   const validatePhoneNumber = (phone: string) => {
-    const phoneRegex = /^\+?[1-9]\d{1,14}$/; // Simple international phone number validation
+    const phoneRegex = /^\+?[1-9]\d{1,14}$/;
     return phoneRegex.test(phone);
   };
 
-  // Handle input changes for text fields
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -83,7 +81,6 @@ export const AppointmentSection: React.FC = () => {
         );
 
         const data = response.data;
-        console.log("data: ", data);
 
         if (data.status === "success") {
           setFormState(AppointmentState.Success);
@@ -98,7 +95,7 @@ export const AppointmentSection: React.FC = () => {
     return (
       <Box
         sx={{
-          padding: "40px 120px",
+          padding: { xs: "40px 32px", md: "40px 120px" },
           textAlign: "center",
           height: "400px",
           display: "flex",
@@ -115,7 +112,7 @@ export const AppointmentSection: React.FC = () => {
             fontWeight: "700",
             fontSize: "40px",
             textTransform: "uppercase",
-            width: "560px",
+            maxWidth: "560px",
           }}
         >
           Your appointment request was successfully submitted.
@@ -138,17 +135,24 @@ export const AppointmentSection: React.FC = () => {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <Box
-        sx={{ padding: "40px 120px", display: "flex" }}
+        sx={{
+          padding: { xs: "40px 32px", md: "40px 120px" },
+          display: "flex",
+          flexDirection: { xs: "column", lg: "row" },
+          alignItems: "center",
+        }}
         id={"appointment-form"}
         component="form"
         onSubmit={handleSubmit}
       >
         <Box
           sx={{
-            width: "50%",
+            width: { xs: "100%", lg: "50%" },
+            margin: { lg: "32px" },
             display: "flex",
             flexDirection: "column",
-            alignItems: "flex-start",
+            alignItems: { xs: "center", lg: "flex-start" },
+            textAlign: { xs: "center", lg: "left" },
           }}
         >
           <Typography
@@ -196,10 +200,10 @@ export const AppointmentSection: React.FC = () => {
         </Box>
         <Box
           sx={{
-            width: "50%",
+            width: { xs: "100%", lg: "50%" },
             display: "flex",
             flexDirection: "column",
-            alignItems: "flex-start",
+            alignItems: { xs: "center", lg: "flex-start" },
             gap: "8px",
           }}
         >

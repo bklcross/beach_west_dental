@@ -64,6 +64,10 @@ export const HeroSection = () => {
             fontWeight: "700",
             letterSpacing: "2px",
             textTransform: "uppercase",
+            fontSize: {
+              xs: "40px",
+              sm: "60px",
+            },
           }}
         >
           A Better Life Starts With A Beautiful Smile
@@ -78,7 +82,7 @@ export const HeroSection = () => {
             color: "#1f5796",
             backgroundColor: "#ffffff",
             borderRadius: "16px",
-            margin: "0 16px",
+            margin: { xs: "16px", sm: "0 16px" },
             fontFamily: "Montserrat",
             fontWeight: "700",
           }}

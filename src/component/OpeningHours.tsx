@@ -5,12 +5,15 @@ export const OpeningHours = () => {
   return (
     <Box
       sx={{
-        maxWidth: "280px",
-        width: "100%",
+        maxWidth: { md: "280px" },
+        width: { md: "100%" },
         boxShadow: "none",
         backgroundColor: "#2E529C",
         color: "#ffffff",
-        padding: "48px",
+        padding: { xs: "32px", md: "48px" },
+        display: "flex",
+        flexDirection: "column",
+        alignItems: { xs: "center", md: "flex-start" },
       }}
     >
       <Typography
@@ -23,20 +26,17 @@ export const OpeningHours = () => {
           fontWeight: "600",
           fontSize: "28px",
           letterSpacing: "2px",
+          textAlign: "center",
         }}
       >
         OPENING HOURS
       </Typography>
-      <Typography
-        variant="body1"
-        color="text.secondary"
-        sx={{ color: "#ffffff" }}
-      >
+      <Box sx={{ color: "#ffffff", width: "100%" }}>
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "24px 0",
+            margin: "32px 0",
             fontFamily: "oswald",
             fontWeight: "500",
             fontSize: "16px",
@@ -49,7 +49,7 @@ export const OpeningHours = () => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "24px 0",
+            margin: "32px 0",
             fontFamily: "oswald",
             fontWeight: "500",
             fontSize: "16px",
@@ -62,7 +62,7 @@ export const OpeningHours = () => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "24px 0",
+            margin: "32px 0",
             fontFamily: "oswald",
             fontWeight: "500",
             fontSize: "16px",
@@ -75,7 +75,7 @@ export const OpeningHours = () => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "24px 0",
+            margin: "32px 0",
             fontFamily: "oswald",
             fontWeight: "500",
             fontSize: "16px",
@@ -88,7 +88,7 @@ export const OpeningHours = () => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "24px 0",
+            margin: "32px 0",
             fontFamily: "oswald",
             fontWeight: "500",
             fontSize: "16px",
@@ -102,7 +102,7 @@ export const OpeningHours = () => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "24px 0",
+            margin: "32px 0",
             fontFamily: "oswald",
             fontWeight: "500",
             fontSize: "16px",
@@ -115,7 +115,7 @@ export const OpeningHours = () => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "24px 0",
+            margin: "32px 0",
             fontFamily: "oswald",
             fontWeight: "500",
             fontSize: "16px",
@@ -125,7 +125,7 @@ export const OpeningHours = () => {
         >
           <Box>SUNDAY</Box> <Box>CLOSED</Box>
         </Box>
-      </Typography>
+      </Box>
       <Button
         variant="contained"
         color="inherit"

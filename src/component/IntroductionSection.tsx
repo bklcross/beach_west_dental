@@ -8,6 +8,7 @@ export const IntroductionSection = () => {
       sx={{
         display: "flex",
         justifyContent: "center",
+        flexDirection: { xs: "column", md: "row" },
       }}
     >
       <OpeningHours />

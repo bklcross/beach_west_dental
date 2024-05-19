@@ -11,7 +11,7 @@ export const NewPatientSection = () => {
     <Box
       sx={{
         bgcolor: "#e3f2fd",
-        padding: "40px 0",
+        padding: { xs: "40px 32px", md: "40px" },
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -27,7 +27,7 @@ export const NewPatientSection = () => {
           color: "#2E529C",
           fontWeight: 700,
           fontSize: "48px",
-          padding: "0 0 32px 0",
+          padding: { xs: "0 0 32px 0", md: "0 0 40px 0" },
           letterSpacing: "2px",
           textTransform: "uppercase",
         }}
@@ -44,15 +44,17 @@ export const NewPatientSection = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
-          width: "1000px",
+          flexWrap: "wrap",
+          justifyContent: { xs: "center", md: "space-between" },
         }}
       >
         <Button
           variant="text"
           href={consentPDF}
           download={"Consent_For_Treatment.pdf"}
-          sx={{ textTransform: "unset" }}
+          sx={{
+            textTransform: "unset",
+          }}
         >
           <img src={consentIcon} alt="consent-icon" width={"75px"} />
           <Box

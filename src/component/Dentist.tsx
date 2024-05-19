@@ -7,9 +7,9 @@ export const Dentist = () => {
     <Box
       sx={{
         maxWidth: "100%",
-        width: "100%",
+        width: { md: "100%" },
         boxShadow: "none",
-        padding: "0 48px 40px 40px",
+        padding: { xs: "0 32px 40px 40px", md: "0 48px 40px 40px" },
       }}
       id="dentist-section"
     >
@@ -30,8 +30,14 @@ export const Dentist = () => {
       >
         Meet The Dentist
       </Typography>
-      <Box sx={{ display: "flex", fontFamily: "oswald" }}>
-        <Box mr={"40px"}>
+      <Box
+        sx={{
+          display: "flex",
+          fontFamily: "oswald",
+          flexDirection: { xs: "column", lg: "row" },
+        }}
+      >
+        <Box mr={"40px"} sx={{ display: "flex", justifyContent: "center" }}>
           <img src={dentist} alt="kei kim dentist" width="275px" />
         </Box>
         <Box>
@@ -43,6 +49,7 @@ export const Dentist = () => {
               fontWeight: 600,
               fontSize: "28px",
               fontFamily: "poppins",
+              margin: { xs: "16px 0 ", lg: "0" },
             }}
           >
             Dr. Kei Kim, DDS

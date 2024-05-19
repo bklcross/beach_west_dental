@@ -14,11 +14,17 @@ export const Footer = () => {
         bgcolor: "#2E529C",
         color: "white",
         padding: "48px",
+        flexDirection: { xs: "column", md: "row" },
       }}
-                  id="footer"
+      id="footer"
     >
-      <Box>
-        <img src={logo} alt="bw-logo" style={{ width: 400 }} />
+      <Box
+        sx={{
+          width: { xs: "250px", sm: "300px", lg: "400px" },
+          margin: { xs: "16px", md: "0" },
+        }}
+      >
+        <img src={logo} alt="bw-logo" style={{ width: "100%" }} />
       </Box>
       <Box
         sx={{

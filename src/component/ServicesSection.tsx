@@ -76,7 +76,10 @@ export const ServicesSection = () => {
         display="flex"
         flexWrap="wrap"
         justifyContent="center"
-        sx={{ backgroundShadow: "none", padding: "0 64px" }}
+        sx={{
+          backgroundShadow: "none",
+          padding: { xs: "0 32px", md: "0 64px" },
+        }}
       >
         {services.map((service: ServiceItem) => (
           <Box
