@@ -192,6 +192,10 @@ export const AppointmentSection: React.FC = () => {
               borderRadius: "16px",
               fontFamily: "Montserrat",
               fontWeight: "700",
+              "&:hover": {
+                backgroundColor: "#2E529C",
+                boxShadow: "none",
+              },
             }}
             type="submit"
           >

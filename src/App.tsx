@@ -12,7 +12,7 @@ import { Footer } from "./component/Footer";
 export const App = () => {
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }}>
-      <Box sx={{ maxWidth: "1400px" }}>
+      <Box sx={{ maxWidth: "2400px" }}>
         <NavBar />
         <HeroSection />
         <IntroductionSection />

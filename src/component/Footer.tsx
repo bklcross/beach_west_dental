@@ -44,6 +44,11 @@ export const Footer = () => {
             boxShadow: "none",
             fontFamily: "oswald",
             marginBottom: "8px",
+            "&:hover": {
+              backgroundColor: "unset",
+              boxShadow: "none",
+              color: "#F0441D",
+            },
           }}
         >
           <img src={placeIcon} alt="location" width={"20px"} />
@@ -62,6 +67,11 @@ export const Footer = () => {
             boxShadow: "none",
             fontFamily: "oswald",
             marginBottom: "8px",
+            "&:hover": {
+              backgroundColor: "unset",
+              boxShadow: "none",
+              color: "#F0441D",
+            },
           }}
         >
           <img src={emailIcon} alt="email" width={"20px"} />
@@ -80,6 +90,11 @@ export const Footer = () => {
             boxShadow: "none",
             fontFamily: "oswald",
             marginBottom: "8px",
+            "&:hover": {
+              backgroundColor: "unset",
+              boxShadow: "none",
+              color: "#F0441D",
+            },
           }}
         >
           <img src={phoneIcon} alt="phone" width={"20px"} />

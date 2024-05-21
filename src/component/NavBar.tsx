@@ -41,7 +41,7 @@ export const NavBar = ({ window }: NavBarProps) => {
         color="inherit"
         sx={{
           boxShadow: "none",
-          maxWidth: "1400px",
+          maxWidth: "2400px",
           left: 0,
           right: 0,
           margin: "auto",
