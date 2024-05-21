@@ -12,6 +12,7 @@ export const AboutSection = () => {
         backgroundColor: "#ECF7FC",
         padding: { xs: "32px", md: "40px" },
         alignItems: { xs: "center" },
+        position: "relative",
       }}
     >
       <Box

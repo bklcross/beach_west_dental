@@ -11,16 +11,18 @@ import { Footer } from "./component/Footer";
 
 export const App = () => {
   return (
-    <Box>
-      <NavBar />
-      <HeroSection />
-      <IntroductionSection />
-      <AboutSection />
-      <ServicesSection />
-      <NewPatientSection />
-      <AppointmentSection />
-      <LocationSection />
-      <Footer />
+    <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Box sx={{ maxWidth: "1400px" }}>
+        <NavBar />
+        <HeroSection />
+        <IntroductionSection />
+        <AboutSection />
+        <ServicesSection />
+        <NewPatientSection />
+        <AppointmentSection />
+        <LocationSection />
+        <Footer />
+      </Box>
     </Box>
   );
 };

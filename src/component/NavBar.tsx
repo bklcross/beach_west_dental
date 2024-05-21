@@ -20,7 +20,7 @@ const drawerWidth = 240;
 const navItems: NavItem[] = [
   { label: "Dentist", href: "#dentist-section" },
   { label: "Services", href: "#services-section" },
-  { label: "NewPatient", href: "#new-patient-section" },
+  { label: "New Patient", href: "#new-patient-section" },
   { label: "Contact", href: "#footer" },
 ];
 
@@ -36,7 +36,17 @@ export const NavBar = ({ window }: NavBarProps) => {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <AppBar component="nav" color="inherit" sx={{ boxShadow: "none" }}>
+      <AppBar
+        component="nav"
+        color="inherit"
+        sx={{
+          boxShadow: "none",
+          maxWidth: "1400px",
+          left: 0,
+          right: 0,
+          margin: "auto",
+        }}
+      >
         <Toolbar>
           <IconButton
             aria-label="open drawer"
