@@ -32,7 +32,7 @@ export const AboutSection = () => {
             backgroundPosition: "center",
             backgroundSize: "contain",
             width: "100%",
-            height: "550px",
+            height: { xs: "400px", md: "550px" },
           }}
         ></Box>
       </Box>
