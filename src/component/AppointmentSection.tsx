@@ -304,7 +304,7 @@ export const AppointmentSection: React.FC = () => {
             </Button>
           </Box>
           <ReCAPTCHA
-            sitekey="6LdLq-YpAAAAAHKb28YZNjUyk-oUnX8roWcEK0EJ"
+            sitekey="6LeKreYpAAAAAGXG846DKux1bPPjEN9m1nNvGx"
             onChange={onChange}
           />
         </Box>
