@@ -2,19 +2,29 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
 const axios = require("axios");
-
+// declare a new express app
 const app = express();
 app.use(bodyParser.json());
 app.use(awsServerlessExpressMiddleware.eventContext());
 
+// Enable CORS for all methods
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "*");
-  res.header("Access-Control-Allow-Methods", "*");
   next();
 });
 
-app.post("/verify-recaptcha", async (req, res) => {
+app.get("/test", function (req, res) {
+  // Add your code here
+  res.json({ success: "get call succeed!", url: req.url });
+});
+
+app.get("/test/*", function (req, res) {
+  // Add your code here
+  res.json({ success: "get call succeed!", url: req.url });
+});
+
+app.post("/test", async function (req, res) {
   const { token } = req.body;
   const secretKey = process.env.RECAPTCHA_SECRET;
 
@@ -44,6 +54,31 @@ app.post("/verify-recaptcha", async (req, res) => {
       .status(500)
       .send({ message: "Error verifying reCAPTCHA", error: error.message });
   }
+});
+
+app.post("/test/*", function (req, res) {
+  // Add your code here
+  res.json({ success: "post call succeed!", url: req.url, body: req.body });
+});
+
+app.put("/test", function (req, res) {
+  // Add your code here
+  res.json({ success: "put call succeed!", url: req.url, body: req.body });
+});
+
+app.put("/test/*", function (req, res) {
+  // Add your code here
+  res.json({ success: "put call succeed!", url: req.url, body: req.body });
+});
+
+app.delete("/test", function (req, res) {
+  // Add your code here
+  res.json({ success: "delete call succeed!", url: req.url });
+});
+
+app.delete("/test/*", function (req, res) {
+  // Add your code here
+  res.json({ success: "delete call succeed!", url: req.url });
 });
 
 app.listen(3000, function () {

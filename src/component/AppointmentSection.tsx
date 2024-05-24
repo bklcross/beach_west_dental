@@ -87,7 +87,7 @@ export const AppointmentSection: React.FC = () => {
       try {
         const recaptchaOperation = post({
           apiName: "bwdserver",
-          path: "/test",
+          path: "/verify-recaptcha",
           options: {
             body: {
               token: captchaValue,
