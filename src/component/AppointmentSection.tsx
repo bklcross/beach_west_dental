@@ -13,10 +13,10 @@ export const AppointmentSection: React.FC = () => {
     AppointmentState.Default
   );
   const [appointment, setAppointment] = useState<Appointment>({
-    name: "test",
-    email: "test@test.copm",
-    tel: "1111111111",
-    message: "test",
+    name: "",
+    email: "",
+    tel: "",
+    message: "",
     date: new Date().toLocaleDateString(),
   });
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
@@ -117,11 +117,7 @@ export const AppointmentSection: React.FC = () => {
         const { body: emailBody } = await emailOperation.response;
         const emailResponse: any = await emailBody.json();
 
-        console.log(emailResponse);
-
-        const data = emailResponse.data;
-
-        if (data.status === "success") {
+        if (emailResponse.status === "success") {
           setFormState(AppointmentState.Success);
         }
       } catch (error) {
