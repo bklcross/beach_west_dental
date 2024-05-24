@@ -21,6 +21,20 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/send-appointment": {
+      "name": "/send-appointment",
+      "lambdaFunction": "appointment",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/verify-recaptcha": {
+      "name": "/verify-recaptcha",
+      "lambdaFunction": "recaptcha",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

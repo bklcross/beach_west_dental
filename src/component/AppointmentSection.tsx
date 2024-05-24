@@ -87,7 +87,7 @@ export const AppointmentSection: React.FC = () => {
       try {
         const recaptchaOperation = post({
           apiName: "bwdserver",
-          path: "/test",
+          path: "/verify-recaptcha",
           options: {
             body: {
               token: captchaValue,
@@ -106,7 +106,7 @@ export const AppointmentSection: React.FC = () => {
 
         const emailOperation = post({
           apiName: "bwdserver",
-          path: "/send-email",
+          path: "/send-appointment",
           options: {
             body: {
               ...appointment,

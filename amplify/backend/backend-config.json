@@ -25,6 +25,22 @@
           ],
           "category": "function",
           "resourceName": "test"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "appointment"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "recaptcha"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -32,12 +48,22 @@
     }
   },
   "function": {
+    "appointment": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "email": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
     "recapcha": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "recaptcha": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -56,6 +82,38 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_appointment_appPass": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "appointment"
+        }
+      ]
+    },
+    "AMPLIFY_function_appointment_smtpEmail": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "appointment"
+        }
+      ]
+    },
+    "AMPLIFY_function_appointment_smtpPassword": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "appointment"
+        }
+      ]
+    },
+    "AMPLIFY_function_appointment_smtpUser": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "appointment"
+        }
+      ]
+    },
     "AMPLIFY_function_email_deploymentBucketName": {
       "usedBy": [
         {

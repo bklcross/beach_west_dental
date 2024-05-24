@@ -1,0 +1,21 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "appPass",
+      "environmentVariableName": "APP_PASS"
+    },
+    {
+      "cloudFormationParameterName": "smtpEmail",
+      "environmentVariableName": "SMTP_EMAIL"
+    },
+    {
+      "cloudFormationParameterName": "smtpPassword",
+      "environmentVariableName": "SMTP_PASSWORD"
+    },
+    {
+      "cloudFormationParameterName": "smtpUser",
+      "environmentVariableName": "SMTP_USER"
+    }
+  ]
+}

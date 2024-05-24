@@ -30,7 +30,14 @@
         },
         "test": {
           "recaptchaSecret": "6LeKreYpAAAAAMFiTlWW0f3Z8lG3coYrAEuQG3oi"
-        }
+        },
+        "appointment": {
+          "appPass": "ptxdrpvnlqemkalm",
+          "smtpEmail": "beach.west.dental@gmail.com",
+          "smtpPassword": "flo$$1234",
+          "smtpUser": "beach.west.dental"
+        },
+        "recaptcha": {}
       },
       "api": {
         "bwdserver": {}
