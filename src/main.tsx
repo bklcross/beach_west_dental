@@ -5,9 +5,9 @@ import { App } from "./App.tsx";
 import "./index.css";
 import "./assets/fonts/fonts.css";
 
-// import { Amplify } from "aws-amplify";
-// import amplifyconfig from "./amplifyconfiguration.json";
-// Amplify.configure(amplifyconfig);
+import { Amplify } from "aws-amplify";
+import amplifyconfig from "./amplifyconfiguration.json";
+Amplify.configure(amplifyconfig);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <StrictMode>
