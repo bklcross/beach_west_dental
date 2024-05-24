@@ -1,0 +1,103 @@
+{
+  "api": {
+    "bwdserver": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "recapcha"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "email"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "email": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "recapcha": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "lastPushTimeStamp": "2024-05-24T19:10:17.309Z",
+      "service": "amplifyhosting",
+      "type": "cicd"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_email_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "email"
+        }
+      ]
+    },
+    "AMPLIFY_function_email_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "email"
+        }
+      ]
+    },
+    "AMPLIFY_function_recapcha_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "recapcha"
+        }
+      ]
+    },
+    "AMPLIFY_function_recapcha_recaptchaSecret": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "recapcha"
+        }
+      ]
+    },
+    "AMPLIFY_function_recapcha_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "recapcha"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_appId": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_type": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
+    }
+  }
+}

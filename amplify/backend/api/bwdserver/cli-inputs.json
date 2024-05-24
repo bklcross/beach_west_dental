@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "paths": {
+    "/verify-recapcha": {
+      "name": "/verify-recapcha",
+      "lambdaFunction": "recapcha",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/send-email": {
+      "name": "/send-email",
+      "lambdaFunction": "email",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
