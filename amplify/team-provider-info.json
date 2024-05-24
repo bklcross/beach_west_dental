@@ -13,8 +13,14 @@
     },
     "categories": {
       "function": {
-        "sendEmail": {},
-        "verifyRecapcha": {}
+        "sendEmail": {
+          "deploymentBucketName": "amplify-beachwestdental-main-727e5-deployment",
+          "s3Key": "amplify-builds/sendEmail-6539455a34676b476642-build.zip"
+        },
+        "verifyRecapcha": {
+          "deploymentBucketName": "amplify-beachwestdental-main-727e5-deployment",
+          "s3Key": "amplify-builds/verifyRecapcha-37486c646a4766747958-build.zip"
+        }
       }
     }
   }
