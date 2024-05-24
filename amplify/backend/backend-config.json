@@ -154,6 +154,14 @@
         }
       ]
     },
+    "AMPLIFY_function_recaptcha_recaptchaSecret": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "recaptcha"
+        }
+      ]
+    },
     "AMPLIFY_function_test_recaptchaSecret": {
       "usedBy": [
         {

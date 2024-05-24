@@ -37,7 +37,9 @@
           "smtpPassword": "flo$$1234",
           "smtpUser": "beach.west.dental"
         },
-        "recaptcha": {}
+        "recaptcha": {
+          "recaptchaSecret": "6LeKreYpAAAAAMFiTlWW0f3Z8lG3coYrAEuQG3oi"
+        }
       },
       "api": {
         "bwdserver": {}
