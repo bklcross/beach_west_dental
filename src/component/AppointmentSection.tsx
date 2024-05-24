@@ -6,6 +6,7 @@ import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import axios from "axios";
 import { Appointment } from "../shared/interfaces";
 import { AppointmentState } from "../shared/enums";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const AppointmentSection: React.FC = () => {
   const [formState, setFormState] = useState<AppointmentState>(
@@ -18,6 +19,11 @@ export const AppointmentSection: React.FC = () => {
     message: "",
     date: new Date().toLocaleDateString(),
   });
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+
+  const onChange = (token: string | null) => {
+    setCaptchaValue(token);
+  };
 
   const [errors, setErrors] = useState({
     email: "",
@@ -74,13 +80,28 @@ export const AppointmentSection: React.FC = () => {
     setErrors(newErrors);
 
     if (isValid) {
+      if (!captchaValue) {
+        return;
+      }
+
       try {
-        const response = await axios.post(
+        const resRecaptcha = await axios.post(
+          "https://bwd-email-server.herokuapp.com/verify-recaptcha",
+          {
+            token: captchaValue,
+          }
+        );
+
+        if (resRecaptcha.data.message !== "reCAPTCHA verified successfully") {
+          return;
+        }
+
+        const resApt = await axios.post(
           "https://bwd-email-server.herokuapp.com/",
           appointment
         );
 
-        const data = response.data;
+        const data = resApt.data;
 
         if (data.status === "success") {
           setFormState(AppointmentState.Success);
@@ -181,26 +202,23 @@ export const AppointmentSection: React.FC = () => {
             Our scheduling coordinator will contact you to confirm your
             appointment.
           </Typography>
-          <Button
-            variant="contained"
-            color="inherit"
-            size="large"
-            startIcon={<EventAvailableIcon />}
+          <Box
             sx={{
               color: "#ffffff",
               backgroundColor: "#2E529C",
-              borderRadius: "16px",
               fontFamily: "Montserrat",
               fontWeight: "700",
+              borderRadius: "16px",
               "&:hover": {
                 backgroundColor: "#2E529C",
                 boxShadow: "none",
               },
+              padding: "16px",
+              textTransform: "uppercase",
             }}
-            type="submit"
           >
-            Send Appointment Request
-          </Button>
+            Send Appointment Request Today
+          </Box>
         </Box>
         <Box
           sx={{
@@ -252,12 +270,42 @@ export const AppointmentSection: React.FC = () => {
               onChange={handleInputChange}
             />
           </Box>
-          <StaticDatePicker
-            displayStaticWrapperAs="desktop"
-            orientation="landscape"
-            openTo="day"
-            value={new Date(appointment.date)}
-            onChange={handleDateChange}
+          <Box
+            sx={{ display: "flex", flexDirection: { xs: "column", lg: "row" } }}
+          >
+            <StaticDatePicker
+              displayStaticWrapperAs="desktop"
+              orientation="landscape"
+              openTo="day"
+              value={new Date(appointment.date)}
+              onChange={handleDateChange}
+            />
+            <Button
+              variant="contained"
+              color="inherit"
+              size="large"
+              startIcon={<EventAvailableIcon />}
+              sx={{
+                color: "#ffffff",
+                backgroundColor: "#2E529C",
+                borderRadius: "16px",
+                fontFamily: "Montserrat",
+                fontWeight: "700",
+                "&:hover": {
+                  backgroundColor: "#2E529C",
+                  boxShadow: "none",
+                },
+                height: "42.25px",
+                margin: "32px",
+              }}
+              type="submit"
+            >
+              Submit
+            </Button>
+          </Box>
+          <ReCAPTCHA
+            sitekey="6LdDw4seAAAAAHamGxCNzGv_3Y7Re_qYXWzeOkeN"
+            onChange={onChange}
           />
         </Box>
       </Box>
