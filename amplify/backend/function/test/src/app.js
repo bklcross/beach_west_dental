@@ -54,8 +54,6 @@ app.post("/test", async function (req, res) {
       .status(500)
       .send({ message: "Error verifying reCAPTCHA", error: error.message });
   }
-
-  res.json({ success: "post call succeed!", url: req.url, body: req.body });
 });
 
 app.post("/test/*", function (req, res) {
