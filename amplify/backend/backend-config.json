@@ -96,6 +96,14 @@
         }
       ]
     },
+    "AMPLIFY_function_test_recaptchaSecret": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "test"
+        }
+      ]
+    },
     "AMPLIFY_hosting_amplifyhosting_appId": {
       "usedBy": [
         {

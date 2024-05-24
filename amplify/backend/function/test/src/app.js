@@ -1,7 +1,14 @@
+/* Amplify Params - DO NOT EDIT
+	API_BWDSERVER_APIID
+	API_BWDSERVER_APINAME
+	ENV
+	REGION
+Amplify Params - DO NOT EDIT */
 const express = require("express");
 const bodyParser = require("body-parser");
 const awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
 const axios = require("axios");
+
 // declare a new express app
 const app = express();
 app.use(bodyParser.json());

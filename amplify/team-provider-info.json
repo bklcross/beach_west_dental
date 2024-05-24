@@ -28,7 +28,9 @@
           "deploymentBucketName": "amplify-beachwestdental-dev-deee8-deployment",
           "s3Key": "amplify-builds/email-6754665a752b78597361-build.zip"
         },
-        "test": {}
+        "test": {
+          "recaptchaSecret": "6LeKreYpAAAAAMFiTlWW0f3Z8lG3coYrAEuQG3oi"
+        }
       },
       "api": {
         "bwdserver": {}
