@@ -17,6 +17,24 @@
           "appId": "d28l2mrgjucolx",
           "type": "manual"
         }
+      },
+      "function": {
+        "email": {
+          "deploymentBucketName": "amplify-beachwestdental-dev-a6161-deployment",
+          "s3Key": "amplify-builds/email-712f6d4143487149507a-build.zip",
+          "appPass": "ptxdrpvnlqemkalm",
+          "smtpEmail": "beach.west.dental@gmail.com",
+          "smtpPassword": "flo$$1234",
+          "smtpUser": "beach.west.dental"
+        },
+        "recaptcha": {
+          "deploymentBucketName": "amplify-beachwestdental-dev-a6161-deployment",
+          "s3Key": "amplify-builds/recaptcha-6f707364326a52494b36-build.zip",
+          "recaptchaSecret": "6LeKreYpAAAAAMFiTlWW0f3Z8lG3coYrAEuQG3oi"
+        }
+      },
+      "api": {
+        "beachwestdental": {}
       }
     }
   }

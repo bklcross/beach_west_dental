@@ -3,10 +3,10 @@ import { LocalizationProvider, StaticDatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
 import { useState } from "react";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
-import axios from "axios";
 import { Appointment } from "../shared/interfaces";
 import { AppointmentState } from "../shared/enums";
 import ReCAPTCHA from "react-google-recaptcha";
+import { post } from "aws-amplify/api";
 
 export const AppointmentSection: React.FC = () => {
   const [formState, setFormState] = useState<AppointmentState>(
@@ -85,23 +85,41 @@ export const AppointmentSection: React.FC = () => {
       }
 
       try {
-        const resRecaptcha = await axios.post(
-          "https://bwd-email-server.herokuapp.com/verify-recaptcha",
-          {
-            token: captchaValue,
-          }
-        );
+        const recaptchaOperation = post({
+          apiName: "beachwestdental",
+          path: "/verify-recaptcha",
+          options: {
+            body: {
+              token: captchaValue,
+            },
+          },
+        });
 
-        if (resRecaptcha.data.message !== "reCAPTCHA verified successfully") {
+        const { body: recapchaBody } = await recaptchaOperation.response;
+        const recaptchaResponse: any = await recapchaBody.json();
+
+        console.log(recaptchaResponse);
+
+        if (recaptchaResponse.message !== "reCAPTCHA verified successfully") {
           return;
         }
 
-        const resApt = await axios.post(
-          "https://bwd-email-server.herokuapp.com/",
-          appointment
-        );
+        const emailOperation = post({
+          apiName: "beachwestdental",
+          path: "/email",
+          options: {
+            body: {
+              ...appointment,
+            },
+          },
+        });
 
-        const data = resApt.data;
+        const { body: emailBody } = await emailOperation.response;
+        const emailResponse: any = await emailBody.json();
+
+        console.log(emailResponse);
+
+        const data = emailResponse.data;
 
         if (data.status === "success") {
           setFormState(AppointmentState.Success);
