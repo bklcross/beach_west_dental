@@ -17,6 +17,14 @@
           ],
           "category": "function",
           "resourceName": "email"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "test"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -30,6 +38,11 @@
       "service": "Lambda"
     },
     "recapcha": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "test": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"

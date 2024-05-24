@@ -1,4 +1,10 @@
-const express = require("express");
+/* Amplify Params - DO NOT EDIT
+	API_BWDSERVER_APIID
+	API_BWDSERVER_APINAME
+	ENV
+	FUNCTION_RECAPCHA_NAME
+	REGION
+Amplify Params - DO NOT EDIT */const express = require("express");
 const bodyParser = require("body-parser");
 const awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
 const nodemailer = require("nodemailer");
