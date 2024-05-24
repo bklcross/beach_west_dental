@@ -13,10 +13,10 @@ export const AppointmentSection: React.FC = () => {
     AppointmentState.Default
   );
   const [appointment, setAppointment] = useState<Appointment>({
-    email: "",
-    name: "",
-    tel: "",
-    message: "",
+    name: "test",
+    email: "test@test.copm",
+    tel: "1111111111",
+    message: "test",
     date: new Date().toLocaleDateString(),
   });
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
@@ -87,7 +87,7 @@ export const AppointmentSection: React.FC = () => {
       try {
         const recaptchaOperation = post({
           apiName: "bwdserver",
-          path: "/verify-recaptcha",
+          path: "/test",
           options: {
             body: {
               token: captchaValue,

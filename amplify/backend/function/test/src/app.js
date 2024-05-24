@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
-
+const axios = require("axios");
 // declare a new express app
 const app = express();
 app.use(bodyParser.json());
@@ -24,12 +24,37 @@ app.get("/test/*", function (req, res) {
   res.json({ success: "get call succeed!", url: req.url });
 });
 
-/****************************
- * Example post method *
- ****************************/
+app.post("/test", async function (req, res) {
+  const { token } = req.body;
+  const secretKey = process.env.RECAPTCHA_SECRET;
 
-app.post("/test", function (req, res) {
-  // Add your code here
+  try {
+    const response = await axios.post(
+      `https://www.google.com/recaptcha/api/siteverify`,
+      null,
+      {
+        params: {
+          secret: secretKey,
+          response: token,
+        },
+      }
+    );
+
+    if (response.data.success) {
+      res.status(200).send({ message: "reCAPTCHA verified successfully" });
+    } else {
+      res.status(400).send({
+        message: "reCAPTCHA verification failed",
+        error: response.data["error-codes"],
+      });
+    }
+  } catch (error) {
+    console.error("Error verifying reCAPTCHA:", error);
+    res
+      .status(500)
+      .send({ message: "Error verifying reCAPTCHA", error: error.message });
+  }
+
   res.json({ success: "post call succeed!", url: req.url, body: req.body });
 });
 
@@ -37,10 +62,6 @@ app.post("/test/*", function (req, res) {
   // Add your code here
   res.json({ success: "post call succeed!", url: req.url, body: req.body });
 });
-
-/****************************
- * Example put method *
- ****************************/
 
 app.put("/test", function (req, res) {
   // Add your code here
@@ -51,10 +72,6 @@ app.put("/test/*", function (req, res) {
   // Add your code here
   res.json({ success: "put call succeed!", url: req.url, body: req.body });
 });
-
-/****************************
- * Example delete method *
- ****************************/
 
 app.delete("/test", function (req, res) {
   // Add your code here
@@ -70,7 +87,4 @@ app.listen(3000, function () {
   console.log("App started");
 });
 
-// Export the app object. When executing the application local this does nothing. However,
-// to port it to AWS Lambda we will create a wrapper around that will load the app from
-// this file
 module.exports = app;
