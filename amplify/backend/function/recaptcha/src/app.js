@@ -19,7 +19,7 @@ app.use(awsServerlessExpressMiddleware.eventContext());
 // Enable CORS for all methods
 const allowedOrigins = [
   "https://main.d8en5yfl96eas.amplifyapp.com",
-  "http://www.beachwestdental.com",
+  "https://www.beachwestdental.com",
 ];
 
 app.use(function (req, res, next) {
