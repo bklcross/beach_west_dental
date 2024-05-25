@@ -1,4 +1,10 @@
-import { Box, Typography, TextField, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  CircularProgress,
+} from "@mui/material";
 import { LocalizationProvider, StaticDatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
 import { useState } from "react";
@@ -20,6 +26,7 @@ export const AppointmentSection: React.FC = () => {
     date: new Date().toLocaleDateString(),
   });
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+  const [isInProgress, setIsInProgress] = useState<boolean>(false);
 
   const onChange = (token: string | null) => {
     setCaptchaValue(token);
@@ -63,6 +70,7 @@ export const AppointmentSection: React.FC = () => {
   const handleSubmit = async (
     event: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
+    setIsInProgress(true);
     event.preventDefault();
     let isValid = true;
     let newErrors = { email: "", tel: "" };
@@ -124,6 +132,8 @@ export const AppointmentSection: React.FC = () => {
         console.error("There was an error submitting the form: ", error);
       }
     }
+
+    setIsInProgress(false);
   };
 
   if (formState === AppointmentState.Success) {
@@ -294,28 +304,34 @@ export const AppointmentSection: React.FC = () => {
               value={new Date(appointment.date)}
               onChange={handleDateChange}
             />
-            <Button
-              variant="contained"
-              color="inherit"
-              size="large"
-              startIcon={<EventAvailableIcon />}
-              sx={{
-                color: "#ffffff",
-                backgroundColor: "#2E529C",
-                borderRadius: "16px",
-                fontFamily: "Montserrat",
-                fontWeight: "700",
-                "&:hover": {
+            {isInProgress ? (
+              <Box sx={{ display: "flex", margin: "32px" }}>
+                <CircularProgress />
+              </Box>
+            ) : (
+              <Button
+                variant="contained"
+                color="inherit"
+                size="large"
+                startIcon={<EventAvailableIcon />}
+                sx={{
+                  color: "#ffffff",
                   backgroundColor: "#2E529C",
-                  boxShadow: "none",
-                },
-                height: "42.25px",
-                margin: "32px",
-              }}
-              type="submit"
-            >
-              Submit
-            </Button>
+                  borderRadius: "16px",
+                  fontFamily: "Montserrat",
+                  fontWeight: "700",
+                  "&:hover": {
+                    backgroundColor: "#2E529C",
+                    boxShadow: "none",
+                  },
+                  height: "42.25px",
+                  margin: "32px",
+                }}
+                type="submit"
+              >
+                Submit
+              </Button>
+            )}
           </Box>
           <ReCAPTCHA
             sitekey="6LeKreYpAAAAAGXG846DKux1bPPjEN9m1nNvGx-6"
